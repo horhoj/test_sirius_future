@@ -1,0 +1,32 @@
+*,
+*::before,
+*::after {
+  font-family: Circe Rounded, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 12px;
+  font-weight: 700;
+  color: #323854;
+}
+
+* {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #ddd;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #999;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+  }
+}
+
+body {
+  background-color: #fdfdff;
+}

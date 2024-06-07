@@ -1,0 +1,52 @@
+.Input {
+  border: 1px solid #ECECEC;
+  padding: 10px 12px;
+  background-color: #fff;
+  font-size: 12px;
+  min-height: 36px;
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.isError {
+  border: 1px solid red;
+
+  &:focus {
+    outline: 1px solid red;
+  }
+}
+
+.passwordShowToggleIcon {
+  position: absolute;
+  right: 8px;
+  cursor: pointer;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+.isPassword {
+  padding-right: 45px;
+}

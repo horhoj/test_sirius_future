@@ -1,0 +1,20 @@
+.Button {
+  cursor: pointer;
+  
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  background-color: #8D7FC7;
+  font-size: 16px;
+  height: 40px;
+  border-radius: 30px;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: auto;
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}

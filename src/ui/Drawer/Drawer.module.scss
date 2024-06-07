@@ -1,0 +1,86 @@
+.DrawerBackground {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+
+.backgroundEnter {
+  opacity: 0;
+}
+
+.backgroundEnterActive {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.backgroundExit {
+  opacity: 1;
+}
+
+.backgroundExitActive {
+  opacity: 0;
+  transition: opacity 300ms;
+
+}
+
+$CONTENT_WIDTH: 100%;
+
+.content {
+  width: $CONTENT_WIDTH;
+  position: fixed;
+  max-height: 100vh;
+  top: 0;
+  max-width: fit-content;
+  min-height: 100vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main-bg-color);
+}
+
+.contentLeft {
+  left: 0;
+}
+
+.contentRight {
+  right: 0;
+}
+
+.contentLeftEnter {
+  margin-left: -$CONTENT_WIDTH;
+}
+
+.contentLeftEnterActive {
+  margin-left: 0;
+  transition: margin 300ms;
+}
+
+.contentLeftExit {
+  margin-left: 0;
+}
+
+.contentLeftExitActive {
+  margin-left: -$CONTENT_WIDTH;
+  transition: margin 300ms;
+}
+
+.contentRightEnter {
+  margin-right: -$CONTENT_WIDTH;
+}
+
+.contentRightEnterActive {
+  margin-right: 0;
+  transition: margin 300ms;
+}
+
+.contentRightExit {
+  margin-right: 0;
+}
+
+.contentRightExitActive {
+  margin-right: -$CONTENT_WIDTH;
+  transition: margin 300ms;
+}

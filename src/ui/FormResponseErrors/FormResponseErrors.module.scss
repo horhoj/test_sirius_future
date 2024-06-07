@@ -1,0 +1,16 @@
+.FormResponseErrors {
+  color: red;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  font-size: 16px;
+}
+
+.errors {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}

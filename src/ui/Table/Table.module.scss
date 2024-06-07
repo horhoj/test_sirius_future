@@ -1,0 +1,32 @@
+.Table {
+  width: 100%;
+  & table,
+  & th,
+  & td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+  & td,
+  & th {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+}
+
+.tableWrapper {
+  // margin: 0 auto;
+  // max-width: 100%;
+  overflow-x: auto;
+}
+
+
+.actionsContent {
+  display: flex;
+  gap: 5px;
+}
+
+.actionBtn {
+  height: fit-content !important;
+  padding: 3px 8px !important;
+}

@@ -1,3 +1,4 @@
+import { LeftMenu } from './LeftMenu';
 import styles from './WorkLayout.module.scss';
 import { Spinner } from '~/ui/Spinner';
 
@@ -9,7 +10,12 @@ export function WorkLayout({ children, isLoading = false }: WorkLayoutProps) {
   return (
     <>
       <Spinner isShow={isLoading} />
-      <div className={styles.WorkLayout}>{children}</div>
+      <div className={styles.WorkLayout}>
+        <div className={styles.leftBlock}>
+          <LeftMenu />
+        </div>
+        <div>{children}</div>
+      </div>
     </>
   );
 }

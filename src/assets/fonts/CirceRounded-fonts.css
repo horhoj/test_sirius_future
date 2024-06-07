@@ -54,8 +54,8 @@
         url('CirceRounded-Regular5.woff2') format('woff2'),
         url('CirceRounded-Regular5.woff') format('woff'),
         url('CirceRounded-Regular5.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    /* font-weight: normal;
+    font-style: normal; */
 }
 
 /* @font-face {

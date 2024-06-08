@@ -316,7 +316,7 @@ export function WorkLayoutLeftMenuAchievementsIcon({ fill }: WorkLayoutLeftMenuL
   );
 }
 
-export function WorkLayoutLibraryIcon({ fill }: WorkLayoutLeftMenuLinkIcon) {
+export function WorkLayoutLeftMenuLibraryIcon({ fill }: WorkLayoutLeftMenuLinkIcon) {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -329,7 +329,7 @@ export function WorkLayoutLibraryIcon({ fill }: WorkLayoutLeftMenuLinkIcon) {
   );
 }
 
-export function WorkLayoutExerciseEquipmentIcon({ fill }: WorkLayoutLeftMenuLinkIcon) {
+export function WorkLayoutLeftMenuExerciseEquipmentIcon({ fill }: WorkLayoutLeftMenuLinkIcon) {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M21.0037 15.6705V18.8919" stroke={fill} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -344,7 +344,7 @@ export function WorkLayoutExerciseEquipmentIcon({ fill }: WorkLayoutLeftMenuLink
   );
 }
 
-export function WorkLayoutCheckConnectionIcon({ fill }: WorkLayoutLeftMenuLinkIcon) {
+export function WorkLayoutLeftMenuCheckConnectionIcon({ fill }: WorkLayoutLeftMenuLinkIcon) {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -358,7 +358,7 @@ export function WorkLayoutCheckConnectionIcon({ fill }: WorkLayoutLeftMenuLinkIc
   );
 }
 
-export function WorkLayoutSettingsIcon({ fill }: WorkLayoutLeftMenuLinkIcon) {
+export function WorkLayoutLeftMenuSettingsIcon({ fill }: WorkLayoutLeftMenuLinkIcon) {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -381,7 +381,7 @@ export function WorkLayoutSettingsIcon({ fill }: WorkLayoutLeftMenuLinkIcon) {
   );
 }
 
-export function WorkLayoutQuestionsIcon({ fill }: WorkLayoutLeftMenuLinkIcon) {
+export function WorkLayoutLeftMenuQuestionsIcon({ fill }: WorkLayoutLeftMenuLinkIcon) {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle
@@ -403,6 +403,195 @@ export function WorkLayoutQuestionsIcon({ fill }: WorkLayoutLeftMenuLinkIcon) {
       <path
         d="M12.1001 15.9018C12.1001 15.957 12.0553 16.0017 12 16.0017C11.9448 16.0017 11.9001 15.9569 11.9 15.9017C11.9 15.8465 11.9447 15.8017 12 15.8016C12.0265 15.8016 12.052 15.8121 12.0708 15.8309C12.0896 15.8497 12.1002 15.8752 12.1001 15.9018"
         stroke={fill}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function WorkLayoutLeftMenuBanner() {
+  return (
+    <svg width="73" height="68" viewBox="0 0 73 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse
+        cx="40.7871"
+        cy="12.8951"
+        rx="10.6779"
+        ry="10.233"
+        transform="rotate(16.8995 40.7871 12.8951)"
+        fill="#FFD283"
+      />
+      <path
+        d="M63.7854 19.8454C62.1481 25.2344 46.5456 31.8491 41.1393 30.2066C35.733 28.564 40.6753 20.3477 44.2074 13.8974C46.7745 9.66161 51.5546 5.47124 56.9609 7.11375C62.3672 8.75626 65.4226 14.4564 63.7854 19.8454Z"
+        fill="url(#paint0_linear_4333_162)"
+      />
+      <rect
+        x="10.5195"
+        y="27.1719"
+        width="68.7282"
+        height="60.5082"
+        rx="3"
+        transform="rotate(10.0116 10.5195 27.1719)"
+        fill="url(#paint1_linear_4333_162)"
+      />
+      <rect
+        x="37.0166"
+        y="31.8496"
+        width="18.6864"
+        height="60.5082"
+        transform="rotate(10.0116 37.0166 31.8496)"
+        fill="url(#paint2_linear_4333_162)"
+      />
+      <path
+        d="M7.81464 21.8913C9.02104 16.5018 14.3681 13.1108 19.7575 14.3172L71.7821 25.9626C77.1716 27.169 80.5627 32.516 79.3563 37.9055L79.2671 38.304C78.9051 39.9208 77.301 40.9382 75.6842 40.5762L9.99767 25.8727C8.38083 25.5108 7.36352 23.9067 7.72544 22.2898L7.81464 21.8913Z"
+        fill="url(#paint3_linear_4333_162)"
+      />
+      <rect
+        x="37.5332"
+        y="18.2656"
+        width="15.2368"
+        height="13.4084"
+        transform="rotate(12.5953 37.5332 18.2656)"
+        fill="url(#paint4_linear_4333_162)"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_4333_162"
+          x1="55.9613"
+          y1="11.5123"
+          x2="41.473"
+          y2="20.0012"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#FFD080" />
+          <stop offset="1" stopColor="#FFA841" />
+        </linearGradient>
+        <linearGradient
+          id="paint1_linear_4333_162"
+          x1="44.8836"
+          y1="27.1719"
+          x2="44.8836"
+          y2="87.6801"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#DC69DD" />
+          <stop offset="1" stopColor="#FFBFE6" />
+        </linearGradient>
+        <linearGradient
+          id="paint2_linear_4333_162"
+          x1="46.3598"
+          y1="31.8496"
+          x2="46.3598"
+          y2="92.3579"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#FFA740" />
+          <stop offset="1" stopColor="#FFF9C1" />
+        </linearGradient>
+        <linearGradient
+          id="paint3_linear_4333_162"
+          x1="45.7698"
+          y1="20.1399"
+          x2="42.8409"
+          y2="33.2245"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#E071DF" />
+          <stop offset="1" stopColor="#EE95E2" />
+        </linearGradient>
+        <linearGradient
+          id="paint4_linear_4333_162"
+          x1="45.1516"
+          y1="18.2656"
+          x2="45.1516"
+          y2="31.674"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#FFAA45" />
+          <stop offset="1" stopColor="#FFD282" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+}
+
+export function HeaderMessagesIcon() {
+  return (
+    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M19 21.5H15.5C14.5334 21.5 13.75 20.7166 13.75 19.75V15.0833C13.75 14.1167 14.5334 13.3333 15.5 13.3333H22.5C23.4666 13.3333 24.25 14.1167 24.25 15.0833V19.75C24.25 20.7166 23.4666 21.5 22.5 21.5H21.625V23.25L19 21.5Z"
+        fill="#EEEEFF"
+        stroke="#434B74"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M10 17H16C17.657 17 19 15.657 19 14V6C19 4.343 17.657 3 16 3H4C2.343 3 1 4.343 1 6V14C1 15.657 2.343 17 4 17H5.5V20L10 17Z"
+        fill="#FFF1CB"
+        stroke="#434B74"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M10.6768 10.3232C10.7744 10.4209 10.7744 10.5791 10.6768 10.6768C10.5791 10.7744 10.4209 10.7744 10.3232 10.6768C10.2256 10.5791 10.2256 10.4209 10.3232 10.3232C10.4209 10.2256 10.5791 10.2256 10.6768 10.3232"
+        stroke="#434B74"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M14.6768 10.3232C14.7744 10.4209 14.7744 10.5791 14.6768 10.6768C14.5791 10.7744 14.4209 10.7744 14.3232 10.6768C14.2256 10.5791 14.2256 10.4209 14.3232 10.3232C14.4209 10.2256 14.5791 10.2256 14.6768 10.3232"
+        stroke="#434B74"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M6.67678 10.3232C6.77441 10.4209 6.77441 10.5791 6.67678 10.6768C6.57915 10.7744 6.42085 10.7744 6.32322 10.6768C6.22559 10.5791 6.22559 10.4209 6.32322 10.3232C6.42085 10.2256 6.57915 10.2256 6.67678 10.3232"
+        stroke="#434B74"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function HeaderProfileArrowDownIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 10L12 14L16 10" stroke="#7362BC" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function HeaderProfileExitIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16.4445 8.44253L20.0019 12L16.4445 15.5575"
+        stroke="#008AFF"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M9.33191 12L20.0034 12"
+        stroke="#008AFF"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M7.55432 3.99666C5.58958 3.99666 3.99684 5.5894 3.99684 7.55414L3.99684 16.4458C3.99684 18.4106 5.58958 20.0033 7.55432 20.0033"
+        stroke="#008AFF"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"

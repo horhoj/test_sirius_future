@@ -1,0 +1,29 @@
+.HeaderMessages {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(115, 98, 188, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.counter {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: -3px;
+  right: -3px;
+  background-color: rgba(232, 72, 73, 1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+
+  opacity: 0px;
+
+}

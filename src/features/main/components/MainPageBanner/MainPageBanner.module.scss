@@ -1,0 +1,30 @@
+.MainPageBanner {
+  width: 526px;
+  border-radius: 30px;
+  opacity: 0px;
+  background-color: #7362BC;
+  padding: 46px 180px 46px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.title {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+
+}
+
+.text {
+  margin-top: 12px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  aspect-ratio: 1;
+}

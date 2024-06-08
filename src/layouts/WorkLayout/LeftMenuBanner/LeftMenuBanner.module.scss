@@ -1,0 +1,39 @@
+.LeftMenuBanner {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  min-height: 128px;
+}
+
+.title {
+  font-size: 16px;
+  color: #323854;
+  font-weight: 700;
+}
+
+.text {
+  margin-top: 10px;
+  font-size: 10px;
+  color: #323854;
+}
+
+.bannerIcon {
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+}
+
+.buttonWrapper {
+  margin-top: 10px;
+}
+
+.link {
+  padding: 8px 16px;
+  border-radius: 15px;
+  background-color: #D8ECFF;
+  text-decoration: none;
+  font-size: 12px;
+  color: #323854;
+}

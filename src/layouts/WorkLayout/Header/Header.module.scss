@@ -1,0 +1,23 @@
+.headerWrapper {
+  width: 100%;
+  // overflow: hidden;
+  min-height: 80px;
+}
+
+.header {
+  width: 100%;
+  min-height: 68px;
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.05);
+
+  border-radius: 0 0 15px 15px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px 0 32px;
+  align-items: center;
+}
+
+.rightBlock {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}

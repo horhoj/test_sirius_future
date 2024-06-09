@@ -1,7 +1,13 @@
 import { Delay, FakeApiGateStore, SaveStore, Session, UniqueIdGenerator } from './types';
 import { fakeApiGateStore, saveStoreToLS } from './fakeApiGateStore';
 import { delay } from '~/utils/delay';
-import { GateAPIContract, UserDataContract, authErrorMessagesContract } from '~/CONTRACTS/Gate.contracts';
+import {
+  DisciplineContract,
+  GateAPIContract,
+  LessonContract,
+  UserDataContract,
+  authErrorMessagesContract,
+} from '~/CONTRACTS/Gate.contracts';
 import { getUUID } from '~/utils/getUUID';
 
 export class FakeApiGate implements GateAPIContract {
@@ -85,6 +91,58 @@ export class FakeApiGate implements GateAPIContract {
     if (userSession === undefined) {
       throw new Error(authErrorMessagesContract.INCORRECT_SESSION);
     }
+  }
+
+  public async fetchLessons(params: {
+    startPeriodUnixTime: number;
+    endPeriodUnixTime: number;
+    token: string;
+  }): Promise<LessonContract[]> {
+    await this.system();
+    // найдем сессию
+    const userSession = this.store.sessions.find((session) => session.token === params.token);
+    // Если не нашли, то бросаем ошибку с сообщением согласно контракту
+    if (userSession === undefined) {
+      throw new Error(authErrorMessagesContract.INCORRECT_SESSION);
+    }
+    const lessonsIds = this.store.linksLessonsAndUsers[userSession.userId];
+
+    if (lessonsIds === undefined) {
+      throw new Error(authErrorMessagesContract.SERVER_INTERNAL_ERROR);
+    }
+
+    const allUserLessons = lessonsIds.map((lessonId) => {
+      const lesson = this.store.lessons.find((lesson) => lesson.id === lessonId);
+      if (lesson === undefined) {
+        throw new Error(authErrorMessagesContract.SERVER_INTERNAL_ERROR);
+      }
+      const discipline = this.store.disciplines.find((discipline) => discipline.id === lesson.disciplineId);
+      if (discipline === undefined) {
+        throw new Error(authErrorMessagesContract.SERVER_INTERNAL_ERROR);
+      }
+      return {
+        id: lessonId,
+        isCancelled: lesson.isCancelled,
+        isPaid: lesson.isPaid,
+        startUnixTime: lesson.startUnixTime,
+        lessonDurationInMinutes: lesson.lessonDurationInMinutes,
+        disciplineTitle: discipline.title,
+      };
+    });
+
+    return allUserLessons.filter((lesson) => {
+      return lesson.startUnixTime >= params.startPeriodUnixTime && lesson.startUnixTime <= params.endPeriodUnixTime;
+    });
+  }
+
+  public async fetchDisciplineList(params: { token: string }): Promise<DisciplineContract[]> {
+    await this.system();
+    const sessionIndex = this.store.sessions.findIndex((session) => session.token === params.token);
+    // если сессии не существует, то бросаем ошибку с сообщением согласно контракту
+    if (sessionIndex === -1) {
+      throw new Error(authErrorMessagesContract.INCORRECT_SESSION);
+    }
+    return this.store.disciplines;
   }
 }
 

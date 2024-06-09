@@ -31,7 +31,7 @@
     "vitest.config.ts",
     "vite.config.ts",
     "tests/setup.ts"
-  ],
+, "src/features/schedule/helpers.ts"  ],
   "references": [
     {
       "path": "./tsconfig.node.json"

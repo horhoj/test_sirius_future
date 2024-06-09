@@ -25,4 +25,14 @@ const checkToken = async () => {
   return fakeApiGate.checkToken({ token });
 };
 
-export const api = { login, logout, fetchUserData, checkToken } as const;
+const fetchLessons = async (params: Omit<Parameters<GateAPIContract['fetchLessons']>[0], 'token'>) => {
+  const token = getTokenFromLS();
+  return fakeApiGate.fetchLessons({ token, ...params });
+};
+
+const fetchDisciplineList = async () => {
+  const token = getTokenFromLS();
+  return fakeApiGate.fetchDisciplineList({ token });
+};
+
+export const api = { login, logout, fetchUserData, checkToken, fetchLessons, fetchDisciplineList } as const;

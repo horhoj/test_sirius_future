@@ -1,0 +1,38 @@
+.LessonList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.lesson {
+  border: 0.5px solid #333;
+  border-radius: 4px;
+  padding: 4px;
+
+}
+
+.lessonTime {
+  font-size: 12px;
+  font-weight: 700;
+
+}
+
+.lessonTitle {
+  font-weight: 400;
+  font-size: 12px;
+  color: #323854;
+}
+
+.lessonCancel {
+  text-decoration: line-through;
+}
+
+.complete {
+  border: 0.5px solid #22782B
+}
+
+.isFuture {
+  background-color: #BBE7B9;
+  border: 0.5px solid #BBE7B9;
+}

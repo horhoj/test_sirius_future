@@ -4,10 +4,12 @@ import storage from 'redux-persist/lib/storage';
 import * as rp from 'redux-persist';
 import { settingsReducer } from './settingsSlice';
 import { authReducer } from '~/features/auth/store/authSlice';
+import { scheduleReducer } from '~/features/schedule/scheduleSlice';
 
 const reducers = combineReducers({
   settings: settingsReducer,
   auth: authReducer,
+  schedule: scheduleReducer,
 });
 
 const persistedReducer = persistReducer(

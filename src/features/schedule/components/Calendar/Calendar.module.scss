@@ -1,0 +1,76 @@
+.Calendar {}
+
+.dateList {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border: 1px solid #ececec;
+  background-color: #fff;
+
+}
+
+.dateColumnHeadList {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background-color: #fff;
+
+}
+
+.dateColumnHead {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5px;
+  color: #79747F;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.dateItem {
+  border: 1px solid #ececec;
+  min-height: 100px;
+  padding: 4px;
+}
+
+.dateTitle {
+  display: flex;
+  justify-content: flex-end;
+  color: #323854;
+
+}
+
+.dateTitleNotSelectedMonth {
+  color: #C8C5CD;
+}
+
+.monthButton {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
+  display: flex;
+}
+
+.monthToggle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #323854;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dateSelectWrapper {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.todayButton {
+  border: 1px solid #8D7FC7;
+  width: 85px;
+  height: 32px;
+  padding: 8px 16px 8px 16px;
+  gap: 16px;
+  border-radius: 15px;
+  background: #FFFFFF;
+  cursor: pointer;
+}

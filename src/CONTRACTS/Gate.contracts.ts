@@ -23,6 +23,17 @@ export interface DisciplineContract {
   title: string;
 }
 
+export interface balanceOfLessonContract {
+  disciplineId: DisciplineIdContract;
+  disciplineTitle: string;
+  count: number;
+}
+
+export interface ProfileDataContract {
+  nextLessons: LessonContract[];
+  balanceOfLessons: balanceOfLessonContract[];
+}
+
 export interface GateAPIContract {
   login(params: { email: string; password: string }): Promise<TokenContract>;
   logout(params: { token: TokenContract }): Promise<void>;
@@ -34,6 +45,7 @@ export interface GateAPIContract {
     token: TokenContract;
   }): Promise<LessonContract[]>;
   fetchDisciplineList(params: { token: TokenContract }): Promise<DisciplineContract[]>;
+  fetchProfileData(params: { token: TokenContract }): Promise<ProfileDataContract>;
 }
 
 export enum authErrorMessagesContract {

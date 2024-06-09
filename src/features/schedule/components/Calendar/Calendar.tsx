@@ -1,4 +1,4 @@
-import { memo, useEffect, useMemo, useState } from 'react';
+import { memo, useEffect, useMemo } from 'react';
 import classNames from 'classnames';
 import { scheduleHelpers } from '../../helpers';
 import { scheduleSelectors, scheduleSlice } from '../../scheduleSlice';
@@ -65,16 +65,19 @@ function CalendarComponent() {
         ))}
       </div>
       <div className={styles.dateList}>
-        {dateList.map((el) => (
-          <div key={el.id} className={styles.dateItem}>
-            <div className={classNames(styles.dateTitle, !el.isMonthSame && styles.dateTitleNotSelectedMonth)}>
-              {el.date}
+        {dateList.map((el) => {
+          const { month, date } = el;
+          const id = scheduleHelpers.getLessonMapId({ month, day: date });
+          return (
+            <div key={el.id} className={styles.dateItem}>
+              <div className={classNames(styles.dateTitle, !el.isMonthSame && styles.dateTitleNotSelectedMonth)}>
+                {el.date}
+              </div>
+              {lessonsMap !== null && lessonsMap[id] && <LessonList lessonList={lessonsMap[id]} />}
             </div>
-            {lessonsMap !== null && lessonsMap[el.date] && <LessonList lessonList={lessonsMap[el.date]} />}
-          </div>
-        ))}
+          );
+        })}
       </div>
-      {/* <DevView data={dateList} /> */}
     </div>
   );
 }

@@ -24,13 +24,14 @@ export const makeDefaultFakeApiGateStore = (): FakeApiGateStore => ({
     { id: '3', title: 'Скорочтение' },
   ],
   lessons: [
+    // уроки михаила
     {
       disciplineId: '1',
       id: '1',
       isCancelled: true,
-      isPaid: true,
+      isPaid: false,
       lessonDurationInMinutes: 46,
-      startUnixTime: getTime('2024-06-04T08:00:00.000Z'),
+      startUnixTime: getTime('2024-06-03T08:00:00.000Z'),
     },
     {
       disciplineId: '2',
@@ -38,7 +39,7 @@ export const makeDefaultFakeApiGateStore = (): FakeApiGateStore => ({
       isCancelled: false,
       isPaid: true,
       lessonDurationInMinutes: 45,
-      startUnixTime: getTime('2024-06-04T09:00:00.000Z'),
+      startUnixTime: getTime('2024-06-13T09:00:00.000Z'),
     },
     {
       disciplineId: '2',
@@ -48,8 +49,74 @@ export const makeDefaultFakeApiGateStore = (): FakeApiGateStore => ({
       lessonDurationInMinutes: 45,
       startUnixTime: getTime('2024-06-12T09:00:00.000Z'),
     },
+
+    {
+      disciplineId: '1',
+      id: '4',
+      isCancelled: true,
+      isPaid: false,
+      lessonDurationInMinutes: 46,
+      startUnixTime: getTime('2024-07-12T08:00:00.000Z'),
+    },
+    {
+      disciplineId: '2',
+      id: '5',
+      isCancelled: false,
+      isPaid: true,
+      lessonDurationInMinutes: 45,
+      startUnixTime: getTime('2024-07-12T09:00:00.000Z'),
+    },
+    {
+      disciplineId: '2',
+      id: '6',
+      isCancelled: false,
+      isPaid: true,
+      lessonDurationInMinutes: 45,
+      startUnixTime: getTime('2024-07-02T09:00:00.000Z'),
+    },
+    {
+      disciplineId: '3',
+      id: '7',
+      isCancelled: false,
+      isPaid: true,
+      lessonDurationInMinutes: 45,
+      startUnixTime: getTime('2024-05-31T09:00:00.000Z'),
+    },
+    // уроки анны
+    {
+      disciplineId: '1',
+      id: '8',
+      isCancelled: false,
+      isPaid: true,
+      lessonDurationInMinutes: 45,
+      startUnixTime: getTime('2024-07-12T09:00:00.000Z'),
+    },
+    {
+      disciplineId: '2',
+      id: '9',
+      isCancelled: false,
+      isPaid: true,
+      lessonDurationInMinutes: 45,
+      startUnixTime: getTime('2024-07-02T09:00:00.000Z'),
+    },
+    {
+      disciplineId: '3',
+      id: '10',
+      isCancelled: false,
+      isPaid: false,
+      lessonDurationInMinutes: 45,
+      startUnixTime: getTime('2024-05-31T09:00:00.000Z'),
+    },
+    {
+      disciplineId: '2',
+      id: '11',
+      isCancelled: false,
+      isPaid: false,
+      lessonDurationInMinutes: 45,
+      startUnixTime: getTime('2024-08-01T09:00:00.000Z'),
+    },
   ],
-  linksLessonsAndUsers: { '1': ['1', '2', '3'], '2': [] },
+  linksLessonsAndUsers: { '1': ['1', '2', '3', '4', '5', '6', '7'], '2': ['8', '9', '10', '11'] },
 });
 
 export const loadStoreFromLS = () => {

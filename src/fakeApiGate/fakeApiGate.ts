@@ -1,12 +1,14 @@
-import { Delay, FakeApiGateStore, SaveStore, Session, UniqueIdGenerator } from './types';
+import { Delay, FakeApiGateStore, SaveStore, Session, UniqueIdGenerator, GetCurrentUnixTime } from './types';
 import { fakeApiGateStore, saveStoreToLS } from './fakeApiGateStore';
 import { delay } from '~/utils/delay';
 import {
   DisciplineContract,
   GateAPIContract,
   LessonContract,
+  ProfileDataContract,
   UserDataContract,
   authErrorMessagesContract,
+  balanceOfLessonContract,
 } from '~/CONTRACTS/Gate.contracts';
 import { getUUID } from '~/utils/getUUID';
 
@@ -15,16 +17,20 @@ export class FakeApiGate implements GateAPIContract {
   private delay: Delay;
   private uniqueIdGenerator: UniqueIdGenerator;
   private saveStore: SaveStore;
+  private getCurrentUnixTime: GetCurrentUnixTime;
+
   public constructor(params: {
     store: FakeApiGateStore;
     delay: Delay;
     uniqueIdGenerator: UniqueIdGenerator;
     saveStore: SaveStore;
+    getCurrentUnixTime: GetCurrentUnixTime;
   }) {
     this.store = params.store;
     this.delay = params.delay;
     this.uniqueIdGenerator = params.uniqueIdGenerator;
     this.saveStore = params.saveStore;
+    this.getCurrentUnixTime = params.getCurrentUnixTime;
   }
 
   private async system() {
@@ -144,6 +150,65 @@ export class FakeApiGate implements GateAPIContract {
     }
     return this.store.disciplines;
   }
+
+  public async fetchProfileData(params: { token: string }): Promise<ProfileDataContract> {
+    await this.system();
+    // найдем сессию
+    const userSession = this.store.sessions.find((session) => session.token === params.token);
+    // Если не нашли, то бросаем ошибку с сообщением согласно контракту
+    if (userSession === undefined) {
+      throw new Error(authErrorMessagesContract.INCORRECT_SESSION);
+    }
+    const lessonsIds = this.store.linksLessonsAndUsers[userSession.userId];
+
+    if (lessonsIds === undefined) {
+      throw new Error(authErrorMessagesContract.SERVER_INTERNAL_ERROR);
+    }
+
+    const userLessons = this.store.lessons
+      .filter((lesson) => lessonsIds.includes(lesson.id) && lesson.startUnixTime > this.getCurrentUnixTime())
+      .slice();
+
+    userLessons.sort((a, b) => {
+      return a.startUnixTime - b.startUnixTime;
+    });
+
+    const nextLessons: LessonContract[] = userLessons.slice(0, 3).map((lesson) => {
+      const discipline = this.store.disciplines.find((el) => el.id === lesson.disciplineId);
+      return {
+        id: lesson.id,
+        isCancelled: lesson.isCancelled,
+        isPaid: lesson.isPaid,
+        lessonDurationInMinutes: lesson.lessonDurationInMinutes,
+        startUnixTime: lesson.startUnixTime,
+        disciplineTitle: discipline?.title ?? 'не найдено в базе',
+      };
+    });
+
+    const userAllLessons = this.store.lessons.filter((lesson) => lessonsIds.includes(lesson.id)).slice();
+
+    const hashMap: Record<string, { count: number; title: string }> = {};
+    this.store.disciplines.forEach((discipline) => {
+      hashMap[discipline.id] = { count: 0, title: discipline.title };
+    });
+
+    userAllLessons.forEach((lesson) => {
+      if (hashMap[lesson.disciplineId]) {
+        hashMap[lesson.disciplineId].count++;
+      }
+    });
+
+    const balanceOfLessons: balanceOfLessonContract[] = Object.keys(hashMap).map((key) => ({
+      disciplineId: key,
+      count: hashMap[key].count,
+      disciplineTitle: hashMap[key].title,
+    }));
+
+    return {
+      nextLessons,
+      balanceOfLessons,
+    };
+  }
 }
 
 export const fakeApiGate = new FakeApiGate({
@@ -151,4 +216,5 @@ export const fakeApiGate = new FakeApiGate({
   store: fakeApiGateStore,
   uniqueIdGenerator: () => getUUID(),
   saveStore: () => saveStoreToLS(),
+  getCurrentUnixTime: () => new Date().getTime(),
 });

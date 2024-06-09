@@ -1,0 +1,118 @@
+.NextLessonList {
+  border: 1px solid #7362BC;
+  border-radius: 30px;
+  padding: 28px 4px 30px 28px;
+  min-width: 708px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.list {
+  list-style: none;
+  margin-top: 16px;
+}
+
+.item {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #eeeefe;
+  }
+}
+
+.button {
+
+  width: 288px;
+  height: 40px;
+  padding: 10px 40px;
+  gap: 8px;
+  border-radius: 30px;
+  background-color: #DECFFF;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+
+}
+
+.buttonWrapper {
+  margin-top: 36px;
+  display: flex;
+  justify-content: center;
+}
+
+.dateWrapper {
+  width: 40px;
+}
+
+.date {
+  font-size: 32px;
+  font-weight: 400;
+  ;
+}
+
+.month {
+  font-size: 12px;
+  font-weight: 400;
+
+}
+
+.itemTitle {
+  width: 220px;
+  font-size: 16px;
+  font-weight: 700;
+  padding-left: 20px;
+}
+
+.itemTime {
+  width: 80px;
+  font-weight: 700;
+}
+
+.itemUnknown {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 160px;
+}
+
+.itemButtonsWrapper {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.itemFirstButton {
+
+  font-size: 12px;
+  font-weight: 700;
+  color: #323854;
+  width: 56px;
+  height: 32px;
+  padding: 8px 10px;
+  gap: 10px;
+  border-radius: 15px;
+  border: 1px solid #8D7FC7;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+.itemSecondButton {
+  font-size: 12px;
+  font-weight: 700;
+  color: #323854;
+  background-color: #8D7FC7;
+  width: 56px;
+  height: 32px;
+  padding: 8px 10px;
+  gap: 10px;
+  border-radius: 15px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}

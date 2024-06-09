@@ -35,4 +35,17 @@ const fetchDisciplineList = async () => {
   return fakeApiGate.fetchDisciplineList({ token });
 };
 
-export const api = { login, logout, fetchUserData, checkToken, fetchLessons, fetchDisciplineList } as const;
+const fetchProfileData = async () => {
+  const token = getTokenFromLS();
+  return fakeApiGate.fetchProfileData({ token });
+};
+
+export const api = {
+  login,
+  logout,
+  fetchUserData,
+  checkToken,
+  fetchLessons,
+  fetchDisciplineList,
+  fetchProfileData,
+} as const;

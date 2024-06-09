@@ -26,6 +26,7 @@ const getDatesOfSelectedInterval = (selectedDate: number) => {
     isMonthSame: date.getMonth() === new Date(selectedDate).getMonth(),
     dateView: date.toLocaleString(),
     date: date.getDate(),
+    month: date.getMonth(),
   }));
 };
 
@@ -72,6 +73,8 @@ const getPrevStartMonthDate = (selectedDate: number) => {
   return addMonths(startDateOfSelectedMonth, -1).getTime();
 };
 
+const getLessonMapId = (params: { month: number; day: number }) => `${params.month}-${params.day}`;
+
 const fetchLessonsMapper = (lessons: LessonContract[] | null) => {
   if (lessons === null) {
     return null;
@@ -79,10 +82,13 @@ const fetchLessonsMapper = (lessons: LessonContract[] | null) => {
   const data: LessonsMap = {};
   lessons.forEach((lesson) => {
     const day = new Date(lesson.startUnixTime).getDate();
-    if (data[day] === undefined) {
-      data[day] = [lesson];
+    const month = new Date(lesson.startUnixTime).getMonth();
+    const id = getLessonMapId({ day, month });
+
+    if (data[id] === undefined) {
+      data[id] = [lesson];
     } else {
-      data[day].push(lesson);
+      data[id].push(lesson);
     }
   });
 
@@ -98,4 +104,5 @@ export const scheduleHelpers = {
   getDatesOfSelectedIntervalStartAndEnd,
   fetchLessonsMapper,
   getTimeLabel,
+  getLessonMapId,
 } as const;

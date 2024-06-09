@@ -6,6 +6,8 @@ export type UniqueIdGenerator = () => string;
 
 export type SaveStore = () => void;
 
+export type GetCurrentUnixTime = () => number;
+
 export interface Session {
   userId: UserIdContract;
   token: TokenContract;

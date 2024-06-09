@@ -1,0 +1,66 @@
+.LessonBalance {
+  width: 344px;
+  min-height: 372px;
+
+  padding: 28px 30px;
+
+  border-radius: 30px;
+
+  border: 1px solid #7362BC
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 60px;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #eeeefe
+  }
+
+}
+
+.itemLabel {
+
+  font-size: 16px;
+  font-weight: 700;
+  color: #323854;
+}
+
+.itemCount {
+  color: #323854;
+  font-size: 20px;
+  font-weight: 400;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #EEEEFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list {
+  margin-top: 16px;
+  list-style: none;
+}
+
+.button {
+  margin-top: 36px;  
+  width: 288px;
+  height: 40px;
+  padding: 10px 40px;
+  gap: 8px;
+  border-radius: 30px;
+  background-color: #DECFFF;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}

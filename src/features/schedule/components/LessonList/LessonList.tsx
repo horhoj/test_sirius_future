@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import { scheduleHelpers } from '../../helpers';
 import styles from './LessonList.module.scss';
 import { LessonContract } from '~/CONTRACTS/Gate.contracts';
+import { WalletIcon } from '~/assets/icons';
 
 interface LessonListProps {
   lessonList: LessonContract[];
@@ -32,6 +33,11 @@ export function LessonList({ lessonList }: LessonListProps) {
           <div className={classNames(styles.lessonTitle, lesson.isCancelled && styles.lessonCancel)}>
             {lesson.disciplineTitle}
           </div>
+          {lesson.isPaid && (
+            <div className={styles.walletIcon}>
+              <WalletIcon />
+            </div>
+          )}
         </li>
       ))}
     </ul>

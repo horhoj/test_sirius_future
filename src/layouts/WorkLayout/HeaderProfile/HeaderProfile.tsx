@@ -39,9 +39,9 @@ export function HeaderProfile() {
             </div>
           </div>
           <div className={styles.currentUserWrapper} onClick={todo}>
-            <div className={styles.currentUserAvatar}>А</div>
+            <div className={styles.currentUserAvatar}>#</div>
             <div>
-              <div className={styles.currentUserName}>Анна</div>
+              <div className={styles.currentUserName}></div>
               <div>Другой пользователь</div>
             </div>
           </div>

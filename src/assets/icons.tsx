@@ -619,3 +619,56 @@ export function ScheduleNexArrowIcon() {
     </svg>
   );
 }
+
+export function NextLessonListUserIcon() {
+  return (
+    <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M4 12.3893C5.046 11.3726 6.46133 10.7473 8.01533 10.7473C9.554 10.7473 10.954 11.36 12 12.358C10.954 13.3746 9.53867 14 7.98467 14C6.446 14 5.046 13.3873 4 12.3893Z"
+        stroke="#79747F"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M2.65 10.6833C2.24333 9.874 2 8.968 2 8C2 4.684 4.684 2 8 2C11.316 2 14 4.684 14 8C14 8.96667 13.758 9.87333 13.3487 10.682"
+        stroke="#79747F"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M9.41421 5.25247C10.1953 6.03352 10.1953 7.29985 9.41421 8.0809C8.63316 8.86195 7.36683 8.86195 6.58579 8.0809C5.80474 7.29985 5.80474 6.03352 6.58579 5.25247C7.36683 4.47143 8.63316 4.47143 9.41421 5.25247"
+        stroke="#79747F"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function WalletIcon() {
+  return (
+    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clipPath="url(#clip0_5978_749)">
+        <path
+          d="M2.45459 5.2765H13.0953C13.8319 5.2765 14.4286 5.87317 14.4286 6.60983V12.6665C14.4286 13.3998 13.8286 13.9998 13.0953 13.9998H3.76192C3.02526 13.9998 2.42859 13.4032 2.42859 12.6665V5.52717C2.42859 4.9725 2.77192 4.47583 3.29126 4.27983L10.1933 1.67383C10.6293 1.50917 11.0953 1.83117 11.0953 2.29717V5.27583"
+          stroke="#E12828"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M11.0946 9.41664C10.9566 9.41731 10.8452 9.52931 10.8452 9.66731C10.8452 9.80531 10.9572 9.91731 11.0952 9.91664C11.2332 9.91664 11.3452 9.80464 11.3452 9.66664C11.3452 9.52864 11.2332 9.41664 11.0946 9.41664"
+          stroke="#E12828"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_5978_749">
+          <rect width="16" height="16" fill="white" transform="translate(0.428589)" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+}

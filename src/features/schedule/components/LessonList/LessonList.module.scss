@@ -9,6 +9,7 @@
   border: 0.5px solid #333;
   border-radius: 4px;
   padding: 4px;
+  position: relative;
 
 }
 
@@ -35,4 +36,10 @@
 .isFuture {
   background-color: #BBE7B9;
   border: 0.5px solid #BBE7B9;
+}
+
+.walletIcon {
+  position: absolute;
+  top: 2px;
+  right: 2px;
 }

@@ -1,4 +1,3 @@
-import styles from './App.module.scss';
 import { useAuthFetchUserData } from '~/features/auth/hooks/useAuthFetchUserData';
 import { Router } from '~/router/Router';
 import { Spinner } from '~/ui/Spinner';

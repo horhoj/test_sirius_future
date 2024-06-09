@@ -1,0 +1,46 @@
+.NextLessonCounter {
+  background-color: #FFF1CB;
+  min-width: 344px;
+  border-radius: 30px;
+  padding: 32px;
+  max-height: 245px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #323854;
+  max-width: 180px;
+  text-align: center;
+  width: 100%;
+  margin: auto;
+}
+
+.counter {
+  margin-top: 32px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #323854;
+  text-align: center;
+
+  &>span {
+    font-size: 36px;
+    font-weight: 400;
+  }
+}
+
+.button {
+  display: flex;
+  margin: 24px auto 0 auto;
+  width: 220px;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+  color: #323854;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  border: 1px dashed #323854;
+
+}

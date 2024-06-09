@@ -20,8 +20,8 @@ interface InitialValues {
 }
 
 const initialValues: InitialValues = {
-  email: 'miha@mail.ru',
-  password: '12345678',
+  email: '',
+  password: '',
 };
 
 const VALIDATION_IS_EMPTY_MSG = 'Должно быть заполнено';
@@ -66,6 +66,7 @@ export function LoginPage() {
         <Row isCenter={true}>
           <SiriusLogoIconBig />
         </Row>
+
         <Row mt={32}>
           <FormTitle>Вход в Sirius Future</FormTitle>
         </Row>
@@ -99,6 +100,12 @@ export function LoginPage() {
           <Button type={'submit'} disabled={loginRequest.isLoading} isFullWidth={true}>
             Submit
           </Button>
+        </Row>
+        <Row mt={30} style={{ fontSize: 20, color: 'red' }}>
+          ДОСТУПНЫЕ ЛОГИНЫ: miha@mail.ru и anna@mail.ru
+        </Row>
+        <Row mt={10} style={{ fontSize: 20, color: 'red' }}>
+          ПАРОЛЬ ДЛЯ ВСЕХ УЧЕТОК: 12345678
         </Row>
       </Form>
     </AuthLayout>

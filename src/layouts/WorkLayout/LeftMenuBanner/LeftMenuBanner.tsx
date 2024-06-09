@@ -2,10 +2,7 @@ import { Link } from 'react-router-dom';
 import styles from './LeftMenuBanner.module.scss';
 import { WorkLayoutLeftMenuBanner } from '~/assets/icons';
 
-interface LeftMenuBannerProps {
-  children?: React.ReactNode;
-}
-export function LeftMenuBanner({ children }: LeftMenuBannerProps) {
+export function LeftMenuBanner() {
   return (
     <div className={styles.LeftMenuBanner}>
       <div className={styles.title}>Учитесь бесплатно</div>

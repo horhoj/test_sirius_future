@@ -4,6 +4,10 @@
   border-radius: 50%;
   border: 1px solid rgba(115, 98, 188, 1);
   position: relative;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .arrowDown {
@@ -28,6 +32,8 @@
   padding: 30px;
   border-radius: 16px;
   flex-direction: column;
+  gap: 20px;
+  outline: none;
 }
 
 .title {
@@ -44,9 +50,6 @@
   border: none;
   background-color: rgba(0, 0, 0, 0);
   cursor: pointer;
-  &:hover {
-    // background-color: #eee;
-  }
 }
 
 .exitButtonLabel {
@@ -54,4 +57,31 @@
   font-weight: 400;
   font-weight: 700;
   color: rgba(0, 138, 255, 1);
+}
+
+.currentUserWrapper {
+  width: 190px;
+  height: 48px;
+  padding: 8px;
+  border-radius: 12px;
+  display: flex;
+  gap: 8px;
+  background-color:  #EEEEFF;
+  cursor: pointer;
+}
+
+.currentUserName {
+  font-weight: 700;
+}
+
+.currentUserAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(115, 98, 188, 1);
+  position: relative;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
